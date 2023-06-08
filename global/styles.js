@@ -4,7 +4,7 @@ import { heightPercentageToDP as hp, widthPercentageToDP as wp } from "react-nat
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#000000",
+        backgroundColor: "#212C89",
         alignItems: 'center',
         justifyContent: 'center'
     },
@@ -23,10 +23,10 @@ export const styles = StyleSheet.create({
     onboardingTitle: {
         fontFamily: "Roboto-Medium",
         fontSize: wp(8),
-        color: "#8192DC",
+        color: "#fff",
     },
     onboardingInput: {
-        fontSize: wp(12),
+        fontSize: wp(10),
         color: "#fff",
     }
 });

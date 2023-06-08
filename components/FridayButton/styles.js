@@ -5,7 +5,7 @@ export const styles = StyleSheet.create({
     btnContainer: {
         width: wp(85),
         height: hp(8),
-        backgroundColor: "#8192DC",
+        backgroundColor: "#EFCE57",
     },
     btnText: {
         fontFamily: "Inter-Medium",

@@ -5,10 +5,9 @@ import {
 } from "react-native-responsive-screen";
 import * as Haptics from "expo-haptics";
 
-import Info from "../../../assets/svg/Signup/Info";
+import Back from "../../../assets/svg/Signup/Back";
 
 import { styles } from "./styles";
-import { sendMessage } from "../../../helpers/sendMessage";
 
 export default function Favicon(props) {
 
@@ -16,13 +15,17 @@ export default function Favicon(props) {
         Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
         switch (props.title) {
             case "Your Birthday":
-                sendMessage("Your birthday is used to verify you are old enough to use Almost Friday. It is not shared with anyone.");
+                props.navigation.navigate("onboarding")
+                break;
+            case "Phone Number":
+                props.navigation.navigate("date")
+                break;
         }
     }
 
 	return (
 		<TouchableOpacity style={styles.logoPos} onPress={onPress}>
-			<Info width={wp(15)} height={hp(15)} />
+			<Back width={wp(15)} height={hp(15)} />
 		</TouchableOpacity>
 	);
 }

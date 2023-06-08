@@ -138,7 +138,7 @@ export default function Signup({
 
 	return (
 		<View style={globalStyles.container}>
-			<Favicon title={title} />
+			<Favicon title={title} navigation={navigation} />
 			<View
 				style={[
 					styles.contentRepositionFlex,
@@ -154,17 +154,21 @@ export default function Signup({
 					>
 						{title}
 					</Text>
-					<TextInput
-						style={globalStyles.onboardingInput}
-						value={textValue}
-						onChangeText={textTrigger}
-						autoFocus={true}
-						keyboardType={textInputConfig.keyboardType}
-						placeholder={textInputConfig.placeholder}
-						maxLength={textInputConfig.maxLength}
-						textContentType={textInputConfig.textContentType ? textInputConfig.textContentType : null}
-						autoCapitalize={textInputConfig.autoCapitalize ? textInputConfig.autoCapitalize : null}
-					/>
+					<View style={styles.textInputCover}/>
+					<View style={styles.textInputMargin}>
+						<TextInput
+							style={globalStyles.onboardingInput}
+							value={textValue}
+							onChangeText={textTrigger}
+							autoFocus={true}
+							keyboardType={textInputConfig.keyboardType}
+							placeholder={textInputConfig.placeholder}
+							placeholderTextColor={"#BABABA"}
+							maxLength={textInputConfig.maxLength}
+							textContentType={textInputConfig.textContentType ? textInputConfig.textContentType : null}
+							autoCapitalize={textInputConfig.autoCapitalize ? textInputConfig.autoCapitalize : null}
+						/>
+					</View>
 				</Animated.View>
 				<Animated.View style={{top: buttonPos[0]}}>
 					<View style={[styles.formatButton, {top: textInputConfig.textContentType ? textInputConfig.textContentType == "oneTimeCode" ? -hp(3.5) : -hp(4): hp(1)}]}>

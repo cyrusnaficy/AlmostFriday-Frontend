@@ -9,9 +9,9 @@ export const styles = StyleSheet.create({
         bottom: hp(30),
     },
     almostFridayText: {
-        fontFamily: "Lobster",
-        color: "#8192DC",
-        fontSize: wp(15),
+        fontFamily: "Inter-Medium",
+        color: "#EFCE57",
+        fontSize: wp(13),
     },
     adjustBtn: {
         top: hp(30)
