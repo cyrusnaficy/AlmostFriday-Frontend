@@ -14,7 +14,8 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   const [fontsLoaded] = useFonts({
 		"Lobster": require("./assets/fonts/Lobster-Regular.otf"),
-    "Inter-Medium": require("./assets/fonts/Inter-Medium.otf")
+    "Inter-Medium": require("./assets/fonts/Inter-Medium.otf"),
+    "Roboto-Medium": require("./assets/fonts/Roboto-Medium.otf")
 	});
 
 	Text.defaultProps = {

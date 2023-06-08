@@ -11,6 +11,7 @@ import { styles as globalStyles } from "../../../global/styles"
 
 export default function Onboarding({ navigation }) {
     const [lottieSpeed, setLottieSpeed] = useState(1);
+    const [stopTrigger, setStopTrigger] = useState(false);
 
     useEffect(() => {
 
@@ -18,9 +19,13 @@ export default function Onboarding({ navigation }) {
 
         async function executeHapticFeedback() {
             await delay(1350);
+
+            if(stopTrigger) return;
+
             await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
 
             for(let i = 0; i < 4; i++) {
+                if(stopTrigger) return;
                 await delay(330);
                 await Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Light);
             }
@@ -33,6 +38,12 @@ export default function Onboarding({ navigation }) {
         executeHapticFeedback();
 
     }, []);
+
+    function nextPage() {
+        setStopTrigger(true)
+        Haptics.impactAsync(Haptics.ImpactFeedbackStyle.Medium);
+        navigation.navigate("date")
+    }
 
     return (
         <View style={globalStyles.container}>
@@ -52,6 +63,7 @@ export default function Onboarding({ navigation }) {
                     text={true}
                     boxButton={true}
                     bounce={true}
+                    onPress={nextPage}
                 />
             </View>
         </View>

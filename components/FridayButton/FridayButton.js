@@ -57,7 +57,7 @@ export default function FridayButton({ title, onPress, text, ...props }) {
 					style={[
 						styles.btnContainer,
 						{
-							opacity: props.isBlurred ? 0.7 : 1,
+							opacity: props.isBlurred ? 0.4 : 1,
 							borderRadius: props.boxButton ? hp(0.5) : hp(5),
 						},
 					]}
